@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Tutor Registration</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!--To ensure proper rendering and touch zooming meta is added in head,
+  The width=device-width part sets the width of the page to follow the screen-width of the device (which will vary depending on the device).
+  The initial-scale=1 part sets the initial zoom level when the page is first loaded by the browser.-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"><!-- Latest compiled and minified CSS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script><!-- jQuery library -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script><!-- Latest compiled JavaScript -->
+</head>
+<body>
+
+<div class="container"><!--provides a responsive fixed width container; containers are containing element to wrap site contents-->
+   <h2><p class="text-center">Sign up!</p></h2>
+  <form class="form-horizontal" action="" method="get" onsubmit="return validation()"><!--creating form-->
+  
+  <div class="form-group"> 
+      <label class="control-label col-sm-2" for="fname">First name:</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="fname" placeholder="Enter First name" name="fname">
+		<span id="firstname" class="text-danger font-weight-bold"> </span>
+      </div>
+	  </div>
+	  <div class="form-group">
+      <label class="control-label col-sm-2" for="lname">Last name:</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="lname" placeholder="Enter Last name" name="lname">
+		<span id="lastname" class="text-danger font-weight-bold"> </span>
+      </div>
+	  </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="email">Email:</label>
+      <div class="col-sm-10">
+        <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+		<span id="emailid" class="text-danger font-weight-bold"> </span>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="Password">Password:</label>
+      <div class="col-sm-10">          
+        <input type="text" class="form-control" id="pass" placeholder="Enter password" name="pwd">
+		<span id="Password" class="text-danger font-weight-bold"> </span>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="confirmpassword">Confirm password:</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="confirmpassword" placeholder="Confirm password" name="cpwd">
+		<span id="Confirmpassword" class="text-danger font-weight-bold"> </span>
+      </div>
+	  </div>
+      </div>
+    </div>
+    <div class="form-group">        
+      <div class="col-sm-offset-2 col-sm-10 ">
+        <button type="Register" class="btn btn-default">Register</button>
+      </div>
+    </div>
+  </form>
+  </div>
+  <script type="text/javascript">
+  
+  function validation()
+{
+
+var firstname= document.getElementById('fname').value;
+var lastname= document.getElementById('lname').value;
+var email= document.getElementById('email').value;
+var password= document.getElementById('pass').value;
+var Confirmpassword= document.getElementById('confirmpassword').value;
+var letters = /^[A-Za-z]+$/;
+var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+var passw= /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{7,15}$/;
+ if (firstname == "")//firstname cant be empty
+ {
+   document.getElementById('firstname').innerHTML = "**Please enter the First name**";
+   return false ;
+
+ }
+ 
+if (!firstname.match(/^[a-zA-Z]+$/)) //firstname can only be alphabets
+ {
+ document.getElementById('firstname').innerHTML = "**Please enter the valid First name**";
+   return false ;
+   }
+ 
+ if (lastname == "")//lastname cant be empty
+ {
+   document.getElementById('lastname').innerHTML = "**Please enter the Last name**";
+   return false ;
+ }
+ if (!lastname.match(/^[a-zA-Z]+$/)) //lastname can only be alphabets
+ {
+ document.getElementById('lastname').innerHTML = "**Please enter the valid Last name**";
+   return false ;
+   }
+ if (email == "")//email cant be empty
+ {
+   document.getElementById('emailid').innerHTML = "**Please enter the Email id**";
+   return false ;
+ }
+ if (!mailformat.test(email))//this is not working currently
+ {
+   document.getElementById('emailid').innerHTML = "**Please enter the proper Email id**";
+   return false ;
+ }
+ 
+if ((email.charAt(email.length-4)!='.') && (email.charAt(email.length-3)!='.'))//. cannot be in position other than -3 or -4
+ {
+   document.getElementById('emailid').innerHTML = "**Please enter the valid Email id**";
+   return false ;
+ }
+
+ 
+  if (password == "")//password cant be empty
+ {
+   document.getElementById('Password').innerHTML = "**Please enter the Password**";
+   return false ;
+ }
+ if(!password.match(passw))//format for password
+ {
+   document.getElementById('Password').innerHTML = "**your password  should be between 8 to 15 characters, which should contain at least one lowercase letter, one uppercase letter, one numeric digit, and one special character"
+   return false ;
+ }
+ <!--if ((password.length<8)||(password.length>15))
+<!-- {
+   <!--document.getElementById('Password').innerHTML = "**The password should have atleast 8 characters**";
+   <!--return false} ;-->
+ 
+  if(password!=(Confirmpassword))//password should match with confirm password
+ {
+ document.getElementById('Confirmpassword').innerHTML = "**Passsword does not match**";
+   return false ;
+ 
+ }
+ if (Confirmpassword == "")//confirm password cant be empty
+ {
+   document.getElementById('Confirmpassword').innerHTML = "**Please Re-enter the Password**";
+   return false ;
+ }
+
+ 
+ }
+ 
+</script>
+</body>
+</html>
