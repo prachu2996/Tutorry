@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Tutor Registration</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!--To ensure proper rendering and touch zooming meta is added in head,
+  The width=device-width part sets the width of the page to follow the screen-width of the device (which will vary depending on the device).
+  The initial-scale=1 part sets the initial zoom level when the page is first loaded by the browser.-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"><!-- Latest compiled and minified CSS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script><!-- jQuery library -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script><!-- Latest compiled JavaScript -->
+</head>
+<body>
+
+<div class="container"><!--provides a responsive fixed width container; containers are containing element to wrap site contents-->
+   <h2><p class="text-center">4.Teaching Info</p></h2> 
+  <form class="form-horizontal" form name="RegForm" action="" method="get" onsubmit="return validate3()"><!--creating form-->
+  <div class="form-group required"> 
+    <label class="control-label col-sm-2" for="wk" id="subcheck" >Subjects:</label><!--subjects can teach-->
+	<span id="checksub" class="text-danger font-weight-bold"> </span>
+      <div class="col-sm-6">
+        <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown"></span> <span class="caret"></span></button>
+<ul class="dropdown-menu">
+  <li><a href="#" class="small" data-value="English" tabIndex="-1"><input type="checkbox"/>&nbsp;English</a></li>
+  <li><a href="#" class="small" data-value="Hindi" tabIndex="-1"><input type="checkbox"/>&nbsp;Hindi</a></li>
+  <li><a href="#" class="small" data-value="Marathi" tabIndex="-1"><input type="checkbox"/>&nbsp;Marathi</a></li>
+  <li><a href="#" class="small" data-value="Sanskrit" tabIndex="-1"><input type="checkbox"/>&nbsp;Sanskrit</a></li>
+  <li><a href="#" class="small" data-value="Maths" tabIndex="-1"><input type="checkbox"/>&nbsp;Maths</a></li>
+  <li><a href="#" class="small" data-value="Science" tabIndex="-1"><input type="checkbox"/>&nbsp;Science</a></li>
+</ul>
+  </div>
+ 
+  
+  <br>
+  <div class="form class required">
+<br>
+
+	  <label class="col-md-1 col-md-offset-1 panel" for="field1">Topics:</label>
+		<input type="hidden" name="count" value="1" />
+          <input autocomplete="off" class="input" id="topic" name="prof1" type="text" placeholder="Topics" data-items="8"/>
+		  </span><button id="b1" class="btn add-more" type="button">+</button></div> <span id="fieldtopic" class="text-danger font-weight-bold">
+           
+            
+          
+</div>
+<div class="form-group required"> 
+    <div style="margin-left:100px">
+	<label class="col-md-1 " for="wk" >Spoken Language:</label><!--Language-->
+      <div class="col-sm-6">
+        <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown"></span> <span class="caret"></span></button>
+<ul class="dropdown-menu">
+  <li><a href="#" class="small" data-value="English" tabIndex="-1"><input type="checkbox" name="e"/>&nbsp;English</a></li>
+  <li><a href="#" class="small" data-value="Hindi" tabIndex="-1"><input type="checkbox" name="h"/>&nbsp;Hindi</a></li>
+  <li><a href="#" class="small" data-value="Marathi" tabIndex="-1"><input type="checkbox"/>&nbsp;Marathi</a></li>
+  <li><a href="#" class="small" data-value="Tamil" tabIndex="-1"><input type="checkbox"/>&nbsp;Tamil</a></li>
+  <li><a href="#" class="small" data-value="Bengali" tabIndex="-1"><input type="checkbox"/>&nbsp;Bengali</a></li>
+   <li><a href="#" class="small" data-value="Teulugu" tabIndex="-1"><input type="checkbox"/>&nbsp;Telugu</a></li>
+  <li><a href="#" class="small" data-value="Gujarati" tabIndex="-1"><input type="checkbox"/>&nbsp;Gujarati</a></li>
+</ul>
+<br>
+</div>
+</div>
+  </div>
+   <div class="form-group required"> 
+      <label class="control-label col-sm-2" for="fname">Teaching Experience:</label><!--enter full name-->
+      <div class="col-sm-3">
+        <input type="text" class="form-control" id="texp" placeholder="months/yrs of experience" name="texp">
+		<span id="expr" class="text-danger font-weight-bold"> </span>
+      </div>
+	  </div>
+	  <div class="container">
+   <div class="form-group required"> 
+
+      <label class="control-label col-sm-2" for="fname" id= "avail" >Availability:<span id="checkday" class="text-danger font-weight-bold"> </span></label>
+	      
+      <div class="col-sm-3">
+  
+    <div class="checkbox" id ="avail">
+      <label><input type="checkbox" name="mon" value="">Monday</label><input type="text" class="form-control" aria-label="..." placeholder="Time Eg:1-3">
+    </div>
+    <div class="checkbox">
+      <label><input type="checkbox" value="">Tuesday</label><input type="text" class="form-control" aria-label="..." placeholder="Time Eg:1-3">
+    </div>
+    <div class="checkbox">
+      <label><input type="checkbox" value="">Wednesday</label><input type="text" class="form-control" aria-label="..." placeholder="Time Eg:1-3">
+    </div>
+	<div class="checkbox">
+      <label><input type="checkbox" value="">Thursday</label><input type="text" class="form-control" aria-label="..." placeholder="Time Eg:1-3">
+    </div>
+	<div class="checkbox">
+      <label><input type="checkbox" value="">Friday</label><input type="text" class="form-control" aria-label="..." placeholder="Time Eg:1-3">
+    </div>
+	<div class="checkbox">
+      <label><input type="checkbox" value="">Saturday</label><input type="text" class="form-control" aria-label="..." placeholder="Time Eg:1-3">
+    </div>
+	<div class="checkbox">
+      <label><input type="checkbox" value="">Sunday</label><input type="text" class="form-control" aria-label="..." placeholder="Time Eg:1-3">
+    </div>
+<br>
+<div class="form-group">        
+      <div class="col-sm-offset-2 col-sm-10 ">
+        <button type="Save&Continue" class="btn btn-default">Save&Continue</button>
+      </div>
+	 
+    </div>
+	 <br>
+	</form> 
+
+<script type="text/javascript">
+
+function validate3()
+ {
+ var teachyears= document.getElementById('texp').value;
+ var Topic= document.getElementById('topic').value;
+ var availability=document.getElementById("avail").checked;
+    
+ if (Topic == "") //teaching exprs cannot be empty
+ {
+   document.getElementById('fieldtopic').innerHTML = "**Enter atleast one topic**";
+   return false;
+ }
+ 
+ 
+ if (teachyears == "") //teaching exprs cannot be empty
+ {
+   document.getElementById('expr').innerHTML = "**Enter years of teaching experience**";
+   return false;
+ }
+ 
+}
+</script>
+
+
+
+
+	
+</body>
+</html>
