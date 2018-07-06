@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Tutor profile</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!--To ensure proper rendering and touch zooming meta is added in head,
+  The width=device-width part sets the width of the page to follow the screen-width of the device (which will vary depending on the device).
+  The initial-scale=1 part sets the initial zoom level when the page is first loaded by the browser.-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"><!-- Latest compiled and minified CSS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script><!-- jQuery library -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script><!-- Latest compiled JavaScript -->
+</head>
+<body>
+
+<div class="container"><!--provides a responsive fixed width container; containers are containing element to wrap site contents-->
+   <h2><p class="text-center">2.Educational Info</p></h2> 
+  <form class="form-horizontal" action="" method="get" onsubmit="return validate1()"><!--creating form-->
+  
+  <div class="form-group required"> 
+      <label class="control-label col-sm-2" for="edu">Education:</label><!--enter your qualification -->
+      <div class="col-sm-6">
+        <input type="text" class="form-control" id="edu" placeholder="provide education" name="edu">
+		<span id="educate" class="text-danger font-weight-bold"> </span>
+      </div>
+	  </div>
+	   <div class="form-group required"> 
+      <label class="control-label col-sm-2" for="edu">College name:</label><!--enter your last college name-->
+      <div class="col-sm-6">
+        <input type="text" class="form-control" id="college" placeholder="Name of the last college you studied" name="college">
+		<span id="colg" class="text-danger font-weight-bold"> </span>
+      </div>
+	  </div>
+	  <div class="form-group required"> 
+      <label class="control-label col-sm-2" for="edu">Other Qualification:</label><!--enter your specialized field(optional)-->
+      <div class="col-sm-6">
+        <input type="text" class="form-control" id="specilize" placeholder="you can provide your specialization" name="specilization">
+		<span id="speci" class="text-danger font-weight-bold"> </span>
+      </div>
+	  </div>
+	  	<div class="form-group">        
+      <div class="col-sm-offset-2 col-sm-10 ">
+        <button type="Save&Continue" class="btn btn-default" >Save&Continue</button>
+      </div>
+    </div>
+	
+</form>
+
+ <script type="text/javascript">
+ function validate1()
+{
+
+var Education= document.getElementById('edu').value;
+var clg= document.getElementById('college').value;
+
+if (Education == "") //education cannot be empty
+ {
+   document.getElementById('educate').innerHTML = "**Enter your education**";
+   return false;
+ }
+ 
+ if (clg == "") //college name cannot be empty
+ {
+   document.getElementById('colg').innerHTML = "**Enter your college name**";
+   return false;
+ }
+ }
+</script>
+
+</body>
+</html>
